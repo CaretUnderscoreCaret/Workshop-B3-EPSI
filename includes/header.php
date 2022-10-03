@@ -1,5 +1,7 @@
 <?php
 include 'classes/DB.php';
+session_start();
+
 DB::connect();
 $query = DB::query("
 	SELECT *
