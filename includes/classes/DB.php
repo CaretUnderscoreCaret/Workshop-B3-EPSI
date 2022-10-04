@@ -7,9 +7,7 @@ class DB {
 			self::$db = new mysqli("localhost", "root", "","localfood");
 		}catch (PDOException $e){   
 			$error['DB_CONNECTION_ERROR']=$e->getMessage();
-			echo 'prout';
 		}
-
 	}
 
 	public static function query($sql){
