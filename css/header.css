@@ -64,3 +64,13 @@ h1{
 	  text-align: left;
 	}
 } 
+
+#map {
+	height: 500px; width: 500px;
+}
+
+@media (max-width: 600px) {
+	#map {
+		height: 400px; width: 250px;
+	}
+}

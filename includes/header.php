@@ -12,6 +12,7 @@ echo '
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Exemple d\'un menu responsive</title>  
 		<link rel="stylesheet" href="'.URL.'/css/header.css">  
+		<script src="https://code.jquery.com/jquery-3.6.0.js" type="text/javascript"></script>
 	</head> 
 	<body>   
 		<div class="topnav" id="myTopnav">
