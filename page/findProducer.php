@@ -8,7 +8,7 @@ echo '
 		<script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
 		<div>
 			<label>Distance : </label>
-			<input type="number" onChange="updateProducers(this);" value="10"></input>
+			<input type="number" onChange="updateProducers(this.value);" value="10"></input>
 		</div>
 		<div id="map"></div>
 		<script src="'.URL.'/page/js/map.js"> </script>

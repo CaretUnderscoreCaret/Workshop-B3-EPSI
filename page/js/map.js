@@ -9,6 +9,7 @@ function getLocalisationSuccess(pos){
 	L.marker([crd.latitude, crd.longitude]).addTo(map);
 	longitude = crd.longitude;
 	latitude = crd.latitude;
+	updateProducers(10);
 }
 
 function error(err) {
@@ -43,7 +44,7 @@ function updateProducers(distance){
 	data = {
 		'longitude'  : longitude,
 		'latitude': latitude,
-		'distance'	: distance.value
+		'distance'	: distance
 	};
 	$.ajax({
 		url : 'page/ajax/getProducers.php',
