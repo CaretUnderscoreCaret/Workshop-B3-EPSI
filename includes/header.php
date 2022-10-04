@@ -2,7 +2,8 @@
 include 'classes/DB.php';
 session_start();
 DB::connect();
-define('URL','https://'.$_SERVER['HTTP_HOST'].'/LocalFood/Workshop-B3-EPSI/');
+// define('URL','https://'.$_SERVER['HTTP_HOST'].'/LocalFood/Workshop-B3-EPSI/');
+define('URL','/LocalFood/Workshop-B3-EPSI/');
 echo '
 <!DOCTYPE html> 
 <html lang="fr">
@@ -18,6 +19,7 @@ echo '
 		<div class="topnav" id="myTopnav">
 			<a href="?page=home" class="active">Acceuil</a>
 			<a href="?page=findProducer">Trouver des producteurs</a>
+			<a href="?page=newProducer">recherche</a>
 			<a href="?page=contact">Contact</a>
 			<a href="?page=about">About</a>
 			<a href="javascript:void(0);" class="icon" onclick="openMenu()">
