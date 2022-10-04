@@ -1,14 +1,25 @@
- body {
+body {
 	margin: 0px;
 	background-color: #f9fce2;
- }
+	color: #3e5e39;
+}
  
- .topnav {
+h1{
+	margin-left: 3%;
+}
+
+.content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.topnav {
 	background-color: #9ccd89;
 	overflow: hidden;
-  }
+}
   
-  .topnav a {
+.topnav a {
 	float: left;
 	display: block;
 	color: #3e5e39;
@@ -16,21 +27,21 @@
 	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 17px;
-  }
+}
   
-  .topnav a:hover {
+.topnav a:hover {
 	background-color:  #689c60 ;
 	color: #f9fce2;
-  }
+}
   
-  .topnav a.active {
+.topnav a.active {
 	background-color: #5e9155;
 	color: #f9fce2;
-  }
+}
   
-  .topnav .icon {
+.topnav .icon {
 	display: none;
-  } 
+} 
 
 @media screen and (max-width: 600px) {
 	.topnav a:not(:first-child) {display: none;}
@@ -38,9 +49,9 @@
 	  float: right;
 	  display: block;
 	}
-  }
+}
   
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
 	.topnav.responsive {position: relative;}
 	.topnav.responsive a.icon {
 	  position: absolute;
@@ -52,4 +63,4 @@
 	  display: block;
 	  text-align: left;
 	}
-  } 
+} 

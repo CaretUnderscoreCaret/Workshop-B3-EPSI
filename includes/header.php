@@ -6,7 +6,7 @@ define('URL','https://'.$_SERVER['HTTP_HOST'].'/LocalFood/Workshop-B3-EPSI/');
 echo '
 <!DOCTYPE html> 
 <html lang="fr">
-<script src="js/header.js"> </script>
+<script src="'.URL.'/includes/js/header.js"> </script>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
