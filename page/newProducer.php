@@ -47,7 +47,7 @@ function updateScreen(array){
 <div class="content">
 	<h1>Nouveau producteur</h1>
 
-    <form method="POST" action="newProducerWelcomePage.php">
+    <form method="POST" action="index.php?page=newProducerWelcomePage">
     <label for="name">Nom</label>
 
     <input type="text" id="name" name="name" required maxlength="50" size="50">
