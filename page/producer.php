@@ -1,5 +1,6 @@
 <?php
 echo '
+	<script src="'.URL.'/page/js/products.js"> </script>
 	<a class="btn" style="margin:10px;text-decoration: none;padding-top: 5px;" href="'.URL.'index.php?page=findProducer">< Retour</a>
 ';
 if(isset($_GET['id'])){
@@ -31,7 +32,32 @@ if(isset($_GET['id'])){
 				Jeudi    : '.$producer['horraire_jeudi'].'<br>
 				Vendredi : '.$producer['horraire_vendredi'].'<br>
 			</div>
+			<div class="p_list">
+				<div class="line_content">
+					type : <select id="types" onChange="getProducts('.$_GET['id'].');">
+						<option value=0>Tous</option>
 		';
+		$type_query = DB::query("
+			SELECT type_id,name
+			FROM types
+		");
+		while($type = DB::fetch($type_query)){
+			echo '<option value="'.$type['type_id'].'">'.$type['name'].'</option>';
+		}
+		echo '
+					</select>
+				</div>
+				<div class="product_list" id="product_list"></div>
+			</div>
+			<script>
+				getProducts('.$_GET['id'].');
+			</script>
+		';
+
+
+
+
+
 	}
 	echo '</div>';
 }
