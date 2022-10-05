@@ -10,9 +10,10 @@ h1{
 
 p {
 	margin: 0px;
+	display: flex;
 }
 
-input{
+input, textarea{
 	background-color: #9ccd89;
 	color: #3e5e39;
 	border: #3e5e39;
@@ -43,6 +44,22 @@ select{
 	position: absolute;
 	top: 60%;
 	left: 35%;
+}
+
+.create_product{
+	width: 500px;
+	border: 2px solid #578450;
+	background-color: #9ccd89;;
+	padding: 20px;
+	margin-bottom: 50px;
+}
+.create_product input, textarea, select{
+	margin-left: 10px;
+	border: 2px solid #578450;
+}
+
+.create_product p{
+	margin-top: 10px;
 }
 
 .btn {
