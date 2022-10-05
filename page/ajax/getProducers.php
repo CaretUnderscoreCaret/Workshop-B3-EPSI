@@ -10,7 +10,8 @@ if(isset($_GET['longitude']) && isset($_GET['latitude'])){
 }
 $sql = "
 	SELECT 
-		id,	name, longitude, latitude,
+		id,	name, longitude, latitude, description, score,
+		horraire_lundi, horraire_mardi, horraire_mercredi, horraire_jeudi, horraire_vendredi,
 		ACOS(SIN(RADIANS(".$longitude."))*SIN(RADIANS(longitude))+COS(RADIANS(".$longitude."))*COS(RADIANS(longitude))*COS(RADIANS(".$latitude."-latitude)))*6371 as val
 	FROM producer 
 	WHERE ACOS(SIN(RADIANS(".$longitude."))*SIN(RADIANS(longitude))+COS(RADIANS(".$longitude."))*COS(RADIANS(longitude))*COS(RADIANS(".$latitude."-latitude)))*6371 <= ".$distance.";
