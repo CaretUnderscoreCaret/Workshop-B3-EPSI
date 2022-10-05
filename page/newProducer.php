@@ -44,12 +44,16 @@ function updateScreen(array){
 }
 </script>
 <div class="content">
-	<h1>Nouveau producteur</h1>
+	<h1>Créer un compte</h1>
 
     <form method="POST" action="index.php?page=newProducerWelcomePage">
     <label for="name">Nom:</label>
     <br>
     <input type="text" id="name" name="name" style="background-color: white" required maxlength="50" size="50">
+    <br>
+    <label for="pwd">Mot de passe:</label>
+    <br>
+    <input type="password" id="pwd" name="pwd" style="background-color: white" required maxlength="50" size="50">
     <br>
     <label for="adresse">Adresse:</label>
     <br>
