@@ -5,6 +5,8 @@ echo($_POST["cp"]);
 echo($_POST["ville"]);
 echo($_POST["latitude"]);
 echo($_POST["longitude"]);
+echo($_POST["description"]);
+echo($_POST["horaire"]);
 
 
 $query = DB::query("

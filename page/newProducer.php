@@ -48,23 +48,30 @@ function updateScreen(array){
 	<h1>Nouveau producteur</h1>
 
     <form method="POST" action="index.php?page=newProducerWelcomePage">
-    <label for="name">Nom</label>
-
+    <label for="name">Nom:</label>
+    <br>
     <input type="text" id="name" name="name" required maxlength="50" size="50">
-
-    <label for="adresse">Adresse</label>
-
+    <br>
+    <label for="adresse">Adresse:</label>
+    <br>
     <input type="text" id="adresse" name="adresse" required maxlength="100" size="50">
-    
-    <label for="cp">Code postal</label>
-
+    <br>
+    <label for="cp">Code postal:</label>
+    <br>
     <input type="number" id="cp" name="cp" required>
-
-    <label for="ville">Ville</label>
-
+    <br>
+    <label for="ville">Ville:</label>
+    <br>
     <input type="text" id="ville" name="ville" required maxlength="100" size="50">
+    <br>
+    <label for="description">Descritption:</label>
+    <br>
+    <textarea id="description" name="description" row="4" col="50"></textarea>
+    <br>
+    <label for="horaire">Horaires:</label>
+    <br>
+    <textarea id="horaire" name="horaire" row="4" col="50"></textarea>
 
-    
     <input type="button" id="test" name="test" value="check" onclick="getAdress()">
     <input type="submit" value="Submit">
     <input type="number" id="latitude" name="latitude" step="0.00000000001" hidden>
