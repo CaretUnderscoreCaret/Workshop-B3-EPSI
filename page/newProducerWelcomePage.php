@@ -19,3 +19,18 @@ $query = DB::query("
 	.'"'.$_POST["telephone"].'"'.","
 	.'"'.$pwd.'"'.")
 ");
+$query = DB::query("
+	SELECT id
+	FROM producer
+	WHERE mdp = '".$pwd."'
+");
+if($query != null && $producer = DB::fetch($query)){
+	$_SESSION['id']= $producer['id'];
+}else{
+	echo '
+		<div class="content">
+			Erreur lors de la connexion.
+		</div>
+	';
+}
+

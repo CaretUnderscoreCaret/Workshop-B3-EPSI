@@ -53,11 +53,6 @@ if(isset($_GET['id'])){
 				getProducts('.$_GET['id'].');
 			</script>
 		';
-
-
-
-
-
 	}
 	echo '</div>';
 }

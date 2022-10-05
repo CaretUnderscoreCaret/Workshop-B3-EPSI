@@ -1,6 +1,11 @@
 <?php
 include 'include_top.php';
 
+if(isset($_GET['deconnexion'])){
+	session_destroy();
+	header('Location: '.URL.'index.php?page=findProducer');
+}
+
 echo '
 <!DOCTYPE html> 
 <html lang="fr">
@@ -14,11 +19,22 @@ echo '
 	</head> 
 	<body>   
 		<div class="topnav" id="myTopnav">
-			<a href="?page=home" class="active">Acceuil</a>
-			<a href="?page=findProducer">Trouver des producteurs</a>
-			<a href="?page=about">About</a>
-			<a href="?page=newProducer">Inscription</a>
-			<a href="?page=contact">Connection</a>
+			<a href="?page=findProducer" class="active">Trouver des producteurs</a>
+';
+if(isset($_SESSION['id'])){
+	echo '
+		<a href="?page=mesProduits">Mes Produits</a>	
+		<a href="?page=profil">Profil</a>
+		<a href="?page=findProducer&deconnexion=1">Deconnexion</a>
+	';
+}else{
+	echo '
+		<a href="?page=newProducer">Inscription</a>	
+		<a href="?page=Connexion">Connexion</a>
+	';
+}
+
+echo '
 			<a href="javascript:void(0);" class="icon" onclick="openMenu()">
 				<i class="fa fa-bars"><label>☰</label></i>
 			</a>

@@ -1,7 +1,31 @@
 <?php
-
+echo '<div class="content">';
+$erreur = '';
+if(isset($_POST['mdp']) && isset($_POST['email'])){
+	$query = DB::query("
+		SELECT id, mdp
+		FROM producer
+		WHERE email = '".$_POST['email']."'
+	");
+	if($query == null){
+		$erreur = 'Email inconnue';
+	}else{
+		$producer = DB::fetch($query);
+		if(password_verify($_POST["mdp"],$producer['mdp'])){
+			$_SESSION['id']=$producer['id'];
+			header('Location: '.URL.'index.php?page=findProducer');
+		}else{
+			$erreur = 'Mot de passe incorect.';
+		}
+	}
+}
 echo '
-	<div class="content">
-		<h1>Connecxion</h1>
+		<h1>Connexion</h1>
+		<form id="conn" action="" method="post">
+			<label>Email : </label><input type="text" name="email"></input>
+			<label>Mot de passe : </label><input type="password" name="mdp"></input>
+			<button class="btn" onClick="document.forms["conn"].submit();" style="margin-top:5px;">Connexion</button>
+		</form>
+		'.$erreur.'
 	</div>
 ';
