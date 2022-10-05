@@ -31,11 +31,18 @@ select{
 	margin: 2px;
 	padding: 2px;
 	height: 60px;
+	display: flex;
 }
 
 .product_list{
 	height: 475px;
 	overflow-y: scroll;
+}
+
+.ProductPhoto{
+	position: absolute;
+	top: 60%;
+	left: 35%;
 }
 
 .btn {

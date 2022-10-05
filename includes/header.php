@@ -1,9 +1,6 @@
 <?php
-include 'classes/DB.php';
-session_start();
-DB::connect();
-// define('URL','https://'.$_SERVER['HTTP_HOST'].'/LocalFood/Workshop-B3-EPSI/');
-define('URL','/LocalFood/Workshop-B3-EPSI/');
+include 'include_top.php';
+
 echo '
 <!DOCTYPE html> 
 <html lang="fr">

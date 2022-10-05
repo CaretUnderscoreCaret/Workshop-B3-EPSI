@@ -26,3 +26,18 @@ function getProducts(producer){
 		}
 	});
 }
+
+function showProduct(pid){
+	var a = document.getElementsByClassName("ProductPhoto");
+	for (let i = 0; i < a.length; i++) {
+		if(a.item(i).id != 'Photo_'+pid){
+			a.item(i).style.display = "none";
+		}
+	  }
+	var e = document.getElementById('Photo_'+pid);
+	if(e.style.display == "block"){
+		e.style.display = "none";
+	}else{
+		e.style.display = "block";
+	}
+}
