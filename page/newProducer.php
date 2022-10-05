@@ -51,6 +51,10 @@ function updateScreen(array){
     <br>
     <input type="text" id="name" name="name" style="background-color: white" required maxlength="50" size="50">
     <br>
+    <label for="pwd">Mot de passe:</label>
+    <br>
+    <input type="password" id="pwd" name="pwd" style="background-color: white" required maxlength="50" size="50">
+    <br>
     <label for="adresse">Adresse:</label>
     <br>
     <input type="text" id="adresse" name="adresse" style="background-color: white" required maxlength="100" size="50">
