@@ -64,13 +64,21 @@ function updateScreen(array){
     <br>
     <input type="text" id="ville" name="ville" required maxlength="100" size="50">
     <br>
+    <label for="telephone">Téléphone:</label>
+    <br>
+    <input type="tel" id="telephone" name="telephone" placeholder="0675757575" pattern="0[0-9]{9}">
+    <br>
+    <label for="mail">Email:</label>
+    <br>
+    <input id="mail" name="mail" placeholder="loc@localfood.fr">
+    <br>
     <label for="description">Descritption:</label>
     <br>
-    <textarea id="description" name="description" row="4" col="50"></textarea>
+    <textarea id="description" name="description" row="10" col="50" maxlength="500"></textarea>
     <br>
     <label for="horaire">Horaires:</label>
     <br>
-    <textarea id="horaire" name="horaire" row="4" col="50"></textarea>
+    <textarea id="horaire" name="horaire" row="10" col="50" maxlength="500"></textarea>
 
     <input type="button" id="test" name="test" value="check" onclick="getAdress()">
     <input type="submit" value="Submit">
