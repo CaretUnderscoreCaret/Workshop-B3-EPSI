@@ -16,9 +16,9 @@ echo '
 		<div class="topnav" id="myTopnav">
 			<a href="?page=home" class="active">Acceuil</a>
 			<a href="?page=findProducer">Trouver des producteurs</a>
-			<a href="?page=newProducer">recherche</a>
-			<a href="?page=contact">Contact</a>
 			<a href="?page=about">About</a>
+			<a href="?page=newProducer">Inscription</a>
+			<a href="?page=contact">Connection</a>
 			<a href="javascript:void(0);" class="icon" onclick="openMenu()">
 				<i class="fa fa-bars"><label>☰</label></i>
 			</a>

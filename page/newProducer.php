@@ -44,7 +44,7 @@ function updateScreen(array){
 }
 </script>
 <div class="content">
-	<h1>Nouveau producteur</h1>
+	<h1>Inscription</h1>
 
     <form method="POST" action="index.php?page=newProducerWelcomePage">
     <label for="name">Nom:</label>
