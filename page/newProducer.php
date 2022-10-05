@@ -77,23 +77,23 @@ function updateScreen(array){
     <br>
     <label for="horairelun">Horaires lundi:</label>
     <br>
-    <textarea id="horairelun" name="horairelun" row="10" col="50" maxlength="50" placeholder="8h-17h ou fermé"></textarea>
+    <textarea id="horairelun" name="horairelun" row="1" col="50" maxlength="50" placeholder="8h-17h ou fermé" style="resize:none"></textarea>
     <br>
     <label for="horairemar">Horaires mardi:</label>
     <br>
-    <textarea id="horairemar" name="horairemar" row="10" col="50" maxlength="50" placeholder="8h-17h ou fermé"></textarea>
+    <textarea id="horairemar" name="horairemar" row="1" col="50" maxlength="50" placeholder="8h-17h ou fermé" style="resize:none"></textarea>
     <br>
     <label for="horairemer">Horaires mercredi:</label>
     <br>
-    <textarea id="horairemer" name="horairemer" row="10" col="50" maxlength="50" placeholder="8h-17h ou fermé"></textarea>
+    <textarea id="horairemer" name="horairemer" row="1" col="50" maxlength="50" placeholder="8h-17h ou fermé" style="resize:none"></textarea>
     <br>
     <label for="horairejeu">Horaires jeudi:</label>
     <br>
-    <textarea id="horairejeu" name="horairejeu" row="10" col="50" maxlength="50" placeholder="8h-17h ou fermé"></textarea>
+    <textarea id="horairejeu" name="horairejeu" row="1" col="50" maxlength="50" placeholder="8h-17h ou fermé" style="resize:none"></textarea>
     <br>
     <label for="horaireven">Horaires vendredi:</label>
     <br>
-    <textarea id="horaireven" name="horaireven" row="10" col="50" maxlength="50" placeholder="8h-17h ou fermé"></textarea>
+    <textarea id="horaireven" name="horaireven" row="1" col="50" maxlength="50" placeholder="8h-17h ou fermé" style="resize:none"></textarea>
     
 
     <input type="button" id="test" name="test" value="check" onclick="getAdress()">
