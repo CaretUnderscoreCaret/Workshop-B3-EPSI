@@ -7,22 +7,15 @@ if(isset($_GET['action']) && $_GET['action'] == 'add_product'){
 		isset($_POST['prix']) &&
 		count($_FILES)
 	){
-		$query = DB::query("
-			INSERT INTO products (product_name, type, producer_id, description, prix_U) 
-			VALUES ('".$_POST['name']."',".$_POST['type'].",".$_SESSION['id'].",'".$_POST['description']."',".$_POST['prix'].")
-		");
-		$p_query = DB::query("
-			SELECT product_id
-			FROM products
-			WHERE description = '".$_POST['description']."'
-			AND producer_id = ".$_SESSION['id']."
-		");
-		if($p_query != null){
-			$product = DB::fetch($p_query);
-			rename($_FILES['photo']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].'/LocalFood/Workshop-B3-EPSI/images/products/'.$product['product_id'].'.jpg');
-		}else{
-			echo 'ERREUR';
-		}
+		$data = [
+			'product_name' => $_POST['name'],
+			'type'		   => $_POST['type'],
+			'producer_id'  => $_SESSION['id'],
+			'description'  => $_POST['description'],
+			'prix_U'	   => $_POST['prix']
+		];
+		$id = DB::insert('products',$data);
+		rename($_FILES['photo']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].'/LocalFood/Workshop-B3-EPSI/images/products/'.$id.'.jpg');
 	}else{
 		echo 'ERREUR';
 		var_dump($_POST);
