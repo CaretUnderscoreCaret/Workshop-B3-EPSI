@@ -9,7 +9,7 @@ echo '
 		<div class="line_content">
 			<div>
 				<label>Distance : </label>
-				<input id="distance" type="number" onChange="updateProducers(this.value);" value="10" style="width: 50px;"></input>km
+				<input id="distance" type="number" onChange="updateProducers(this.value);" value="10" style="width: 50px;" min="0"></input>km
 			</div>
 			<button class="btn" style="min-height: 0px;margin-left:20px;" onClick="localiser();">Localiser moi</button>
 		</div>

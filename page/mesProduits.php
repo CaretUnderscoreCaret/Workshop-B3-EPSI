@@ -1,5 +1,33 @@
 <?php
-
+if(isset($_GET['action']) && $_GET['action'] == 'add_product'){
+	if(
+		isset($_POST['name']) &&
+		isset($_POST['description']) &&
+		isset($_POST['type']) &&
+		isset($_POST['prix']) &&
+		count($_FILES)
+	){
+		$query = DB::query("
+			INSERT INTO products (product_name, type, producer_id, description, prix_U) 
+			VALUES ('".$_POST['name']."',".$_POST['type'].",".$_SESSION['id'].",'".$_POST['description']."',".$_POST['prix'].")
+		");
+		$p_query = DB::query("
+			SELECT product_id
+			FROM products
+			WHERE description = '".$_POST['description']."'
+			AND producer_id = ".$_SESSION['id']."
+		");
+		if($p_query != null){
+			$product = DB::fetch($p_query);
+			rename($_FILES['photo']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].'/LocalFood/Workshop-B3-EPSI/images/products/'.$product['product_id'].'.jpg');
+		}else{
+			echo 'ERREUR';
+		}
+	}else{
+		echo 'ERREUR';
+		var_dump($_POST);
+	}
+}
 echo '
 	<script src="'.URL.'/page/js/products.js"> </script>
 	<div class="content">
@@ -16,12 +44,51 @@ while($type = DB::fetch($type_query)){
 	echo '<option value="'.$type['type_id'].'">'.$type['name'].'</option>';
 }
 echo '
-			</select>
+				</select>
+			</div>
+			<div class="product_list" id="product_list"></div>
 		</div>
-		<div class="product_list" id="product_list"></div>
+		<script>
+			getProducts('.$_SESSION['id'].');
+		</script>
+		<button class="btn" style="margin-bottom:20px;">Nouveau Produit</button>
+
+		<div class="create_product">
+				<form action ="index.php?page=mesProduits&action=add_product" method="post" enctype=\'multipart/form-data\'>
+				<p>
+					<label>Nom</label>
+					<input name="name" id="nom" type="text" required></input><br>
+				</p>
+				<p>
+					<label>Description</label>
+					<textarea id="desc" name="description" row="10" col="50" maxlength="500" required></textarea>
+				</p>
+				<p>
+					<label>Type</label>
+					<select id="type" name="type">
+';
+	$type_query = DB::query("
+		SELECT type_id,name
+		FROM types
+	");
+	while($type = DB::fetch($type_query)){
+		echo '<option value="'.$type['type_id'].'">'.$type['name'].'</option>';
+	}
+echo '
+					</select>
+				</p>
+				<p>
+					<label>Prix</label>
+					<input id="prix" name="prix" type="number" min="0" required></input><br>
+				</p>
+				<p>
+					<label>Photo</label>
+					<input id="photo" name="photo" type="file" accept="image/jpeg" required></input><br>
+				</p>
+				<p>
+					<input class="btn" type="submit" value="Créer"></input>
+				</p>
+			</form>
+		</div>
 	</div>
-	</div>
-	<script>
-		getProducts('.$_GET['id'].');
-	</script>
 ';
