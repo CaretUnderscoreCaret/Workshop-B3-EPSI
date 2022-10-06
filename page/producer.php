@@ -34,7 +34,7 @@ if(isset($_GET['id'])){
 			</div>
 			<div class="p_list">
 				<div class="line_content">
-					type : <select id="types" onChange="getProducts('.$_GET['id'].');">
+					type : <select id="types" onChange="getProducts('.$_GET['id'].',0);">
 						<option value=0>Tous</option>
 		';
 		$type_query = DB::query("
@@ -50,7 +50,7 @@ if(isset($_GET['id'])){
 				<div class="product_list" id="product_list"></div>
 			</div>
 			<script>
-				getProducts('.$_GET['id'].');
+				getProducts('.$_GET['id'].',0);
 			</script>
 		';
 	}

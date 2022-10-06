@@ -42,11 +42,12 @@ echo '
 			<div class="product_list" id="product_list"></div>
 		</div>
 		<script>
-			getProducts('.$_SESSION['id'].');
+			getProducts('.$_SESSION['id'].',1);
 		</script>
-		<button class="btn" style="margin-bottom:20px;">Nouveau Produit</button>
+		<button id="btn_create_product" class="btn" style="margin-bottom:20px;" onClick="showCreateProduct();">Nouveau Produit</button>
 
-		<div class="create_product">
+		<div class="create_product" id="create_product" style="display: none;">
+				<h3>Nouveau Produit :</h3>
 				<form action ="index.php?page=mesProduits&action=add_product" method="post" enctype=\'multipart/form-data\'>
 				<p>
 					<label>Nom</label>
@@ -72,14 +73,15 @@ echo '
 				</p>
 				<p>
 					<label>Prix</label>
-					<input id="prix" name="prix" type="number" min="0" required></input><br>
+					<input id="prix" name="prix" type="number" min="0" step=".01" required></input><br>
 				</p>
 				<p>
 					<label>Photo</label>
 					<input id="photo" name="photo" type="file" accept="image/jpeg" required></input><br>
 				</p>
 				<p>
-					<input class="btn" type="submit" value="Créer"></input>
+					<input class="btn" type="submit" value="Créer" style="width: 100px;"></input>
+					<input class="btn" type="" value="Annuler" style="width: 100px;" onClick="showCreateProduct();"></input>
 				</p>
 			</form>
 		</div>
