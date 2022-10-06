@@ -2,9 +2,9 @@
 $query=DB::query("Select description, horraire_lundi, horraire_mardi, horraire_mercredi, horraire_jeudi, horraire_vendredi from producer where id =".$_SESSION["id"]);
 $tab=DB::fetch($query);
 echo '<div class="content">
-<h1>Profile</h1>
+<h1>Profil</h1>
 <form method="POST" action=page/modifyProfil.php>
-<label for="des">Descritption:</label>
+<label for="des">Description:</label>
 <br>';
 if($tab["description"]!==""){
     echo '<textarea id="description" name="description" row="10" col="50" maxlength="500">'.$tab["description"].'</textarea>';

@@ -11,7 +11,7 @@ echo '
 				<label>Distance : </label>
 				<input id="distance" type="number" onChange="updateProducers(this.value);" value="10" style="width: 50px;" min="0"></input>km
 			</div>
-			<button class="btn" style="min-height: 0px;margin-left:20px;" onClick="localiser();">Localiser moi</button>
+			<button class="btn" style="min-height: 0px;margin-left:20px;" onClick="localiser();">Localisez-moi</button>
 		</div>
 		<div id="map"></div>
 		<script src="'.URL.'/page/js/map.js"> </script>

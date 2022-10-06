@@ -75,7 +75,7 @@ function updateScreen(array){
     <br>
     <input id="mail" name="mail" style="background-color: white" placeholder="loc@localfood.fr" pattern="[a-zA-Z0-9.]{1,}[@][a-zA-Z0-9]{1,}[.][a-zA-Z0-9]{1,}">
     <br>
-    <label for="des">Descritption:</label>
+    <label for="des">Description:</label>
     <br>
     <textarea id="description" name="description" row="10" col="50" maxlength="500"></textarea>
     <br>
@@ -100,8 +100,8 @@ function updateScreen(array){
     <textarea id="horaireven" name="horaireven" row="1" col="50" maxlength="50" placeholder="8h-17h ou fermé" style="resize:none"></textarea>
     
 
-    <input type="button" id="test" name="test" value="check" onclick="getAdress()">
-    <input type="submit" value="Submit">
+    <input type="button" id="test" name="test" value="Check" onclick="getAdress()">
+    <input type="submit" value="Valider">
     <input type="number" id="latitude" name="latitude" step="0.00000000001" hidden>
     <input type="number" id="longitude" name="longitude" step="0.00000000001" hidden>
     </form>
