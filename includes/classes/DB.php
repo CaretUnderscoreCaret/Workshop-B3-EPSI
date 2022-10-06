@@ -18,6 +18,24 @@ class DB {
 		return $result;
 	}
 
+	public static function insert($table,$data){
+		$champs = '';
+		$values = '';
+		foreach($data as $champ => $value){
+			$champs .= $champ.',';
+			if(is_string($value)){
+				$value = "'".$value."'";
+			}
+			$values .= $value.',';
+		}
+		$sql = "
+			INSERT INTO ".$table." (".substr($champs, 0, -1).")
+			VALUES (".substr($values, 0, -1).")
+		";
+		DB::query($sql);
+		return self::$db->insert_id;
+	}
+
 	public static function fetch($query){
 		if($query){
 			return $query->fetch_assoc();

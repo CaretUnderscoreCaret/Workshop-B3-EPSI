@@ -8,6 +8,10 @@ h1{
 	margin-left: 3%;
 }
 
+h3{
+	margin : 5px
+}
+
 p {
 	margin: 0px;
 	display: flex;
@@ -47,15 +51,17 @@ select{
 }
 
 .create_product{
-	width: 500px;
+	width: 458px;
 	border: 2px solid #578450;
 	background-color: #9ccd89;;
 	padding: 20px;
 	margin-bottom: 50px;
 }
 .create_product input, textarea, select{
+	background-color: #c2e8b2;;
 	margin-left: 10px;
 	border: 2px solid #578450;
+	color: #578450;
 }
 
 .create_product p{
@@ -196,5 +202,9 @@ select{
 	}
 	.product_list{
 		height: 375px;
+	}
+
+	.create_product{
+		width: 240px;
 	}
 }

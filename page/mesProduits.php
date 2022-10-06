@@ -7,22 +7,15 @@ if(isset($_GET['action']) && $_GET['action'] == 'add_product'){
 		isset($_POST['prix']) &&
 		count($_FILES)
 	){
-		$query = DB::query("
-			INSERT INTO products (product_name, type, producer_id, description, prix_U) 
-			VALUES ('".$_POST['name']."',".$_POST['type'].",".$_SESSION['id'].",'".$_POST['description']."',".$_POST['prix'].")
-		");
-		$p_query = DB::query("
-			SELECT product_id
-			FROM products
-			WHERE description = '".$_POST['description']."'
-			AND producer_id = ".$_SESSION['id']."
-		");
-		if($p_query != null){
-			$product = DB::fetch($p_query);
-			rename($_FILES['photo']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].'/LocalFood/Workshop-B3-EPSI/images/products/'.$product['product_id'].'.jpg');
-		}else{
-			echo 'ERREUR';
-		}
+		$data = [
+			'product_name' => $_POST['name'],
+			'type'		   => $_POST['type'],
+			'producer_id'  => $_SESSION['id'],
+			'description'  => $_POST['description'],
+			'prix_U'	   => $_POST['prix']
+		];
+		$id = DB::insert('products',$data);
+		rename($_FILES['photo']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].'/LocalFood/Workshop-B3-EPSI/images/products/'.$id.'.jpg');
 	}else{
 		echo 'ERREUR';
 		var_dump($_POST);
@@ -49,11 +42,12 @@ echo '
 			<div class="product_list" id="product_list"></div>
 		</div>
 		<script>
-			getProducts('.$_SESSION['id'].');
+			getProducts('.$_SESSION['id'].',1);
 		</script>
-		<button class="btn" style="margin-bottom:20px;">Nouveau Produit</button>
+		<button id="btn_create_product" class="btn" style="margin-bottom:20px;" onClick="showCreateProduct();">Nouveau Produit</button>
 
-		<div class="create_product">
+		<div class="create_product" id="create_product" style="display: none;">
+				<h3>Nouveau Produit :</h3>
 				<form action ="index.php?page=mesProduits&action=add_product" method="post" enctype=\'multipart/form-data\'>
 				<p>
 					<label>Nom</label>
@@ -79,14 +73,15 @@ echo '
 				</p>
 				<p>
 					<label>Prix</label>
-					<input id="prix" name="prix" type="number" min="0" required></input><br>
+					<input id="prix" name="prix" type="number" min="0" step=".01" required></input><br>
 				</p>
 				<p>
 					<label>Photo</label>
 					<input id="photo" name="photo" type="file" accept="image/jpeg" required></input><br>
 				</p>
 				<p>
-					<input class="btn" type="submit" value="Créer"></input>
+					<input class="btn" type="submit" value="Créer" style="width: 100px;"></input>
+					<input class="btn" type="" value="Annuler" style="width: 100px;" onClick="showCreateProduct();"></input>
 				</p>
 			</form>
 		</div>
