@@ -39,6 +39,4 @@ echo '
 				<i class="fa fa-bars"><label>☰</label></i>
 			</a>
 		</div>
-	</body>  
-</html>  
 ';

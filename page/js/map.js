@@ -11,11 +11,6 @@ function getLocalisationSuccess(pos){
 	longitude = crd.longitude;
 	latitude = crd.latitude;
 	updateProducers(distance);
-	// L.circle([latitude, longitude], {
-	// 	color: 'red',
-	// 	fillOpacity: 0,
-	// 	radius: distance * 100
-	// }).addTo(map);
 }
 
 function error(err) {
@@ -27,7 +22,6 @@ function display_map(){
 		maxZoom: 19,
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
-	// var marker = L.marker([51.5, -0.09]).addTo(map);
 	localiser(distance);
 }
 
@@ -82,7 +76,7 @@ function updateProducers(distance){
 					text += (value.score > i?'&#9733;':'&#9734;');
 				}
 				text += '</p>';
-				text += value.description+'<br>';
+				text += value.description.substring(0,100)+'...<br>';
 				text += '<div class="tiny_content">Lundi : '+(value.horraire_lundi == null?'fermé':value.horraire_lundi)+'<br>';
 				text += 'Mardi : '+(value.horraire_mardi == null?'fermé':value.horraire_mardi)+'<br>';
 				text += 'Mercredi : '+(value.horraire_mercredi == null?'fermé':value.horraire_mercredi)+'<br>';

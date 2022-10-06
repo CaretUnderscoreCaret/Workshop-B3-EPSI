@@ -41,7 +41,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'create_producer'){
 	<div class="content">
 		<h1>Inscription</h1>
 	
-		<form method="POST" action="index.php?page=newProducer&action=create_producer">
+		<form method="POST" action="index.php?page=inscription&action=create_producer">
 			<label for="name">Nom:</label>
 		<br>
 			<input type="text" id="name" name="name" style="background-color: white" required maxlength="50" size="50">

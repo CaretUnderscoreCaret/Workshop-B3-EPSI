@@ -60,7 +60,7 @@ echo '
 			<label for="horaireven">Horaires vendredi:</label><br>
 			<textarea id="horaireven" name="horaireven" row="1" col="50" maxlength="50" placeholder="8h-17h ou fermé" style="resize:none">'.$tab["horraire_vendredi"].'</textarea>
 
-			<input style="margin:5px;" class="btn" type="submit" value="Modifier">
+			<input style="margin:5px;" class="btn" type="submit" value="Enregistrer">
 		</form>
 	</div>
 ';
