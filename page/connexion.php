@@ -1,5 +1,5 @@
 <?php
-echo '<div class="content">';
+echo '<div class="content" style="min-height: 420px;">';
 $erreur = '';
 if(isset($_POST['mdp']) && isset($_POST['email'])){
 	$query = DB::query("
