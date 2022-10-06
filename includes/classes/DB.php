@@ -41,6 +41,5 @@ class DB {
 			return $query->fetch_assoc();
 		}
 	}
-
 }
 
