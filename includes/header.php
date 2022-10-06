@@ -29,7 +29,7 @@ if(isset($_SESSION['id'])){
 	';
 }else{
 	echo '
-		<a href="?page=newProducer">Inscription</a>	
+		<a href="?page=inscription">Inscription</a>	
 		<a href="?page=Connexion">Connexion</a>
 	';
 }

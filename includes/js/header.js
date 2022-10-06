@@ -9,4 +9,4 @@ function openMenu() {
 	} else {
 	  x.className = "topnav";
 	}
-  } 
+} 
